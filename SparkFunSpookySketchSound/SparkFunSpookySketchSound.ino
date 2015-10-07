@@ -22,16 +22,16 @@ int showType = 0;     //value to tell which sound to trigger
 void setup(){
  Serial.begin(9600); 
  pinMode(pirPin, INPUT);  //reciving info from motion sensor pin
- pinMode(9, OUTPUT);      //sending input to sound trigger 1
- pinMode(10, OUTPUT);     //sending input to sound trigger 2
- pinMode(11, OUTPUT);     //sending input to sound trigger 3
- pinMode(12, OUTPUT);     //sending input to sound trigger 4
- pinMode(13, OUTPUT);     //sending input to sound trigger 5
- digitalWrite(9, HIGH);   //trigger off
- digitalWrite(10, HIGH);   //trigger off
- digitalWrite(11, HIGH);   //trigger off
- digitalWrite(12, HIGH);   //trigger off
- digitalWrite(13, HIGH);   //trigger off
+ pinMode(9, INPUT);      
+ pinMode(10, INPUT);     
+ pinMode(11, INPUT);    
+ pinMode(12, INPUT);     
+ pinMode(13, INPUT);     
+ digitalWrite(9, LOW);   //trigger off
+ digitalWrite(10, LOW);   //trigger off
+ digitalWrite(11, LOW);   //trigger off
+ digitalWrite(12, LOW);   //trigger off
+ digitalWrite(13, LOW);   //trigger off
 }
 
 
@@ -47,11 +47,16 @@ void loop(){
     if (showType > 4)    //if over 4
       showType=0;        //set it back to 0 
     startShow(showType); //run the case
-    digitalWrite(9, HIGH);   //trigger off
-    digitalWrite(10, HIGH);   //trigger off
-    digitalWrite(11, HIGH);   //trigger off
-    digitalWrite(12, HIGH);   //trigger off
-    digitalWrite(13, HIGH);   //trigger off
+    pinMode(9, INPUT);      
+    pinMode(10, INPUT);     
+    pinMode(11, INPUT);    
+    pinMode(12, INPUT);     
+    pinMode(13, INPUT);     
+    digitalWrite(9, LOW);   //trigger off
+    digitalWrite(10, LOW);   //trigger off
+    digitalWrite(11, LOW);   //trigger off
+    digitalWrite(12, LOW);   //trigger off
+    digitalWrite(13, LOW);   //trigger off
   }
   oldState = pirVal;
 }
@@ -59,19 +64,24 @@ void loop(){
 
 void startShow(int i) {
   switch(i){
-    case 0: digitalWrite(9, LOW);     //first sound trigger
+    case 0: pinMode(9, OUTPUT);
+            digitalWrite(9, LOW);     //first sound trigger
             delay(2000);
             break;
-    case 1: digitalWrite(10, LOW);    //second sound trigger
+    case 1: pinMode(10, OUTPUT);
+            digitalWrite(10, LOW);    //second sound trigger
             delay(2000);
             break;
-    case 2: digitalWrite(11, LOW);    //third sound trigger
+    case 2: pinMode(11, OUTPUT);
+            digitalWrite(11, LOW);    //third sound trigger
             delay(2000);
             break;
-    case 3: digitalWrite(12, LOW);    //forth sound trigger
+    case 3: pinMode(12, OUTPUT);
+            digitalWrite(12, LOW);    //forth sound trigger
             delay(2000);
             break;
-    case 4: digitalWrite(13, LOW);    //fifth sound trigger
+    case 4: pinMode(13, OUTPUT);
+            digitalWrite(13, LOW);    //fifth sound trigger
             delay(2000);
             break;
 
