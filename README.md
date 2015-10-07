@@ -2,9 +2,11 @@ SparkFun Spooky Sketches
 ========================
 
 These sketches are for the projects for Halloween 2015. 
-Blog post is [here]().
+Blog post is [here](https://www.sparkfun.com/news/1941).
 
-Wishlist of products is [here](). 
+Wishlist of products for Lights is [here](https://www.youtube.com/watch?v=WvE1AlAmY0g). 
+Wishlist of products for Sound is [here](https://www.youtube.com/watch?v=UoIejG2jH90). 
+
 
 
 Repository Contents
